@@ -10,7 +10,7 @@ try:
         url, 
         json={
             "email": "slizen.can@gmail.com1",
-            "password": "slizen.can@gmail.com"
+            "password": "f742dd189a4e7cabd0b99990bb03ed310ba482d3"
         }
     )
 
@@ -22,7 +22,6 @@ try:
     #json_data = response.json
     print("json ", response.request.body)
     print(response.json())
-    print("Headers ", response.headers)
 except HTTPError as http_err:
     print(f'HTTP error occurred: {http_err}')
 except Timeout:
