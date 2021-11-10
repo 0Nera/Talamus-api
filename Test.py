@@ -1,7 +1,7 @@
 from Talamus import api
 import json
 
-Handle = api.User()
+auth = api.Auth()
 
 """Handle.register(
     data={
@@ -16,17 +16,14 @@ Handle.login(
             "password": "SynapseOS_Forever"
         }
     )"""
+User = api.User(Token="h2xa2Nzz")
 
-Profile = Handle.self_profile(
-    token="FYIorHyq"
-    )
+Profile = api.User.self_profile()
 
-Profile = json.loads(Profile)
 print(Profile)
-print(type(Profile['Data']))
-print(
-    json.loads(
-        Profile['Data']
-        )
-        )
-print(type(Profile))
+
+ProfileData = json.loads(Profile)
+ProfileData = json.loads(ProfileData)
+
+print(type(ProfileData))
+print(json.loads(ProfileData['Data']))

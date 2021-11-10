@@ -24,12 +24,10 @@ def request(method, json):
         print('The request timed out')
     except Exception as err:
         print(f'Other error occurred: {err}')
-    else:
-        print('Success!')
 
-class User:
+class Auth:
     def __init__(self):
-        print("Init")
+        print("Init Auth class")
 
     def register(self, data):
         output_json = json.dumps(request("auth/register", data))
@@ -39,6 +37,17 @@ class User:
         output_json = json.dumps(request("auth/login", data))
         return output_json
     
-    def self_profile(self, token):
+    
+
+class User:
+    global token
+    token = ""
+    def __init__(self, Token):
+        global token
+        print("Init User class")
+        token = str(Token)
+    
+    def self_profile():
+        global token
         output_json = json.dumps(request("user", json = { 'token': token}))
         return output_json
